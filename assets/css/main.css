@@ -22,7 +22,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #bf5700; /*#149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -70,10 +70,12 @@ a {
   color: var(--accent-color);
   text-decoration: none;
   transition: 0.3s;
+  stroke: var(--accent-color);
 }
 
 a:hover {
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  stroke: color: color-mix(in srgb, var(--accent-color), transparent 25%);
   text-decoration: none;
 }
 
@@ -267,6 +269,7 @@ h6 {
 .navmenu a,
 .navmenu a:focus {
   color: var(--nav-color);
+  stroke: var(--nav-color);
   padding: 15px 10px;
   font-family: var(--nav-font);
   font-size: 16px;
@@ -303,6 +306,7 @@ h6 {
 .navmenu a .toggle-dropdown:hover,
 .navmenu a:focus .toggle-dropdown:hover {
   background-color: var(--accent-color);
+  stroke: var(--contrast-color);
   color: var(--contrast-color);
 }
 
@@ -310,18 +314,21 @@ h6 {
 .navmenu .active,
 .navmenu .active:focus {
   color: var(--nav-hover-color);
+  stroke: var(--nav-hover-color);
 }
 
 .navmenu a:hover .navicon,
 .navmenu .active .navicon,
 .navmenu .active:focus .navicon {
   color: var(--accent-color);
+  stroke: var(--accent-color);
 }
 
 .navmenu .active .toggle-dropdown,
 .navmenu .active:focus .toggle-dropdown {
   background-color: var(--accent-color);
   color: var(--contrast-color);
+  stroke: var(--contrast-color);
   transform: rotate(180deg);
 }
 
@@ -331,13 +338,15 @@ h6 {
 
 .navmenu .dropdown a,
 .navmenu .dropdown a:focus {
-  color: --nav-dropdown-color;
+  color: var(--nav-dropdown-color);
+  stroke: var(--nav-dropdown-color);
 }
 
 .navmenu .dropdown a:hover,
 .navmenu .dropdown .active,
 .navmenu .dropdown .active:focus {
   color: var(--nav-dropdown-hover-color);
+  stroke: var(--nav-dropdown-hover-color);
 }
 
 .navmenu .dropdown ul {
@@ -825,6 +834,33 @@ section,
   overflow: hidden;
 }
 
+/* Add this section for the headline and subtitle */
+.portfolio .portfolio-content .portfolio-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.portfolio .portfolio-content .portfolio-text h3 {
+  font-size: 18px; /* Headline font size */
+  font-weight: bold;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.portfolio .portfolio-content .portfolio-text h5 {
+  font-size: 14px; /* Subtitle font size */
+  font-weight: normal;
+  margin: 5px 0 0 0;
+  color: rgba(255, 255, 255, 0.8); /* Slightly lighter subtitle */
+}
+
 .portfolio .portfolio-content img {
   transition: 0.3s;
 }
@@ -863,7 +899,7 @@ section,
 .portfolio .portfolio-content .portfolio-info .preview-link,
 .portfolio .portfolio-content .portfolio-info .details-link {
   position: absolute;
-  left: calc(50% - 40px);
+  left: calc(50% - 10px);
   font-size: 26px;
   top: calc(50% - 14px);
   color: #fff;
@@ -877,7 +913,7 @@ section,
 }
 
 .portfolio .portfolio-content .portfolio-info .details-link {
-  left: 50%;
+  left: calc(50% - 13px);
   font-size: 34px;
   line-height: 0;
 }
@@ -889,6 +925,7 @@ section,
 .portfolio .portfolio-content:hover img {
   transform: scale(1.1);
 }
+
 
 /*--------------------------------------------------------------
 # Services Section
@@ -1273,3 +1310,4 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
